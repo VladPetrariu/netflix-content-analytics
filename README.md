@@ -1,6 +1,6 @@
 # Netflix Content Analytics
 
-COSC 301 course project at UBCO — Analyzing Netflix's catalog of movies and TV shows using Python, SQLite, and Tableau.
+COSC 301 course project at UBCO, analyzing Netflix's catalog of movies and TV shows using Python, SQLite, and Tableau.
 
 ## Dataset
 
