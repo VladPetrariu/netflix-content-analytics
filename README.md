@@ -53,6 +53,7 @@ bash scripts/run_pipeline.sh
 ```
 
 This will:
+
 1. **Download** the raw CSV from Kaggle (skipped if file exists)
 2. **Clean** the data — handle missing values, parse dates, split duration, extract primary country/genre
 3. **Load** the cleaned data into a SQLite database with indexes and run demo queries
@@ -69,16 +70,16 @@ python scripts/load_sqlite.py
 
 ## Data Cleaning Decisions
 
-| Issue | Decision | Justification |
-|-------|----------|---------------|
-| Missing director (1,969 rows) | Fill with "Unknown" | Too many to drop; director is useful metadata but not critical for most analyses |
-| Missing cast (570 rows) | Fill with "Unknown" | Same reasoning as director |
-| Missing country (476 rows) | Fill with "Unknown" | Preserves rows for non-geographic analyses |
-| Missing date_added (11 rows) | Drop | Cannot analyze addition trends without this field |
-| Missing rating (10 rows) | Drop | Cannot classify content without rating |
-| Duplicate rows | Remove | None found, but checked defensively |
-| date_added format | Parse "Month Day, Year" → ISO datetime | Enables time-series analysis |
-| duration | Split into value (int) + unit (text) | Allows numeric comparisons for movies (minutes) and shows (seasons) separately |
+| Issue                         | Decision                               | Justification                                                                    |
+| ----------------------------- | -------------------------------------- | -------------------------------------------------------------------------------- |
+| Missing director (1,969 rows) | Fill with "Unknown"                    | Too many to drop; director is useful metadata but not critical for most analyses |
+| Missing cast (570 rows)       | Fill with "Unknown"                    | Same reasoning as director                                                       |
+| Missing country (476 rows)    | Fill with "Unknown"                    | Preserves rows for non-geographic analyses                                       |
+| Missing date_added (11 rows)  | Drop                                   | Cannot analyze addition trends without this field                                |
+| Missing rating (10 rows)      | Drop                                   | Cannot classify content without rating                                           |
+| Duplicate rows                | Remove                                 | None found, but checked defensively                                              |
+| date_added format             | Parse "Month Day, Year" → ISO datetime | Enables time-series analysis                                                     |
+| duration                      | Split into value (int) + unit (text)   | Allows numeric comparisons for movies (minutes) and shows (seasons) separately   |
 
 See [`data_dictionary.md`](data_dictionary.md) for full column reference.
 
@@ -105,11 +106,19 @@ GROUP BY rating ORDER BY avg_min DESC;
 
 ## Use of Generative AI
 
-This project used **Claude** (Anthropic) via **Claude Code** (CLI tool) to assist with:
+This project used two AI tools, one per team member, in accordance with the COSC 301 course policy on generative AI disclosure.
+
+**Vlad Petrariu** used **Claude** (Anthropic) via **Claude Code** (CLI tool) to assist with:
 
 - Writing the ETL cleaning script (`scripts/etl_clean.py`)
 - Writing the SQLite loading script (`scripts/load_sqlite.py`)
 - Writing the pipeline runner (`scripts/run_pipeline.sh`)
-- Drafting the data dictionary and this README
+- Drafting the data dictionary (`data_dictionary.md`)
 
-All AI-generated content was reviewed, tested, and validated by the project authors. Students remain fully accountable for the submitted work, per the COSC 301 syllabus policy on generative AI use.
+**Manpreet Kaur** used **GitHub Copilot** (Microsoft / OpenAI) via the **VS Code extension** to assist with:
+
+- Creating and structuring the EDA & Information Extraction notebook (`notebooks/Netflix_EDA_and_Extraction.ipynb`)
+- Drafting and formatting the final report (`report/final_report.md`)
+- Project organization, README updates, and workflow guidance
+
+All AI-generated content was reviewed, tested, and validated by the respective authors. Both team members remain fully accountable for the submitted work, per the COSC 301 syllabus policy on generative AI use.
