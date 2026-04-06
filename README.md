@@ -11,7 +11,7 @@ COSC 301 course project at UBCO, analyzing Netflix's catalog of movies and TV sh
 
 ## Demo Video
 
-▶️ [Watch the project demo](ADD_YOUR_VIDEO_LINK_HERE)
+🎬 [Watch the project demo on YouTube](https://youtu.be/6iI7pzQwsB4)
 
 The demo covers the full pipeline walkthrough, EDA notebook, Tableau dashboard, and key findings.
 
