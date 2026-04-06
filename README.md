@@ -2,6 +2,19 @@
 
 COSC 301 course project at UBCO, analyzing Netflix's catalog of movies and TV shows using Python, SQLite, and Tableau.
 
+## Team
+
+| Member            | Student # | Responsibilities                                                                                       |
+| ----------------- | --------- | ------------------------------------------------------------------------------------------------------ |
+| **Vlad Petrariu** | 76370956  | Data acquisition, ETL & cleaning scripts, SQLite database setup, pipeline automation, data dictionary  |
+| **Manpreet Kaur** | 33647884  | Exploratory data analysis, information extraction, all visualizations (Python + Tableau), final report |
+
+## Demo Video
+
+▶️ [Watch the project demo](ADD_YOUR_VIDEO_LINK_HERE)
+
+The demo covers the full pipeline walkthrough, EDA notebook, Tableau dashboard, and key findings.
+
 ## Dataset
 
 - **Source**: [Netflix Movies and TV Shows](https://www.kaggle.com/datasets/shivamb/netflix-shows) on Kaggle
